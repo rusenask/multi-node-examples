@@ -39,6 +39,8 @@ from pytorch_lightning.utilities.cli import LightningCLI
 from data import ImageNetDataModule
 from model import ImageNetLightningModel
 
+import time
+
 
 def main():
     cli = LightningCLI(
@@ -54,6 +56,8 @@ def main():
     # TODO: determine per-process batch size given total batch size
     # TODO: enable evaluate
     cli.trainer.fit(cli.model, datamodule=cli.datamodule)
+
+    time.sleep(10000)
 
 
 if __name__ == "__main__":
